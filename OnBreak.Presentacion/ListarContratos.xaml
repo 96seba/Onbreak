@@ -1,0 +1,46 @@
+﻿<Controls:MetroWindow x:Class="OnBreak.Presentacion.ListarContratos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"              
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:OnBreak.Presentacion"
+        mc:Ignorable="d"
+        Title="OnBreak - Listar Contratos" Height="450" Width="800">
+    <Grid>
+
+        <Button x:Name="btnVolver" HorizontalAlignment="Left" Margin="8,11,0,0" VerticalAlignment="Top" Width="35" Height="33" BorderBrush="{x:Null}" Click="BtnVolver_Click_1" Content="{iconPacks:BoxIcons RegularArrowBack, Height=20, Width=20}"  />
+        <Button x:Name="btnBuscar" Content="BUSCAR" HorizontalAlignment="Left" Margin="652,151,0,0" VerticalAlignment="Top" Width="75"  BorderBrush="{x:Null}" Click="BtnBuscar_Click"/>
+        <Button x:Name="btnModificar" Content="SELECCIONAR" HorizontalAlignment="Left" Margin="105,385,0,0" VerticalAlignment="Top" Width="75"  BorderBrush="{x:Null}" Click="BtnModificar_Click"/>
+        <Button x:Name="btnLimpiar" Content="LIMPIAR" HorizontalAlignment="Left" Margin="245,387,0,0" VerticalAlignment="Top" Width="75"  BorderBrush="{x:Null}" Click="BtnLimpiar_Click"/>
+        <Button x:Name="btnEliminar" Content=" ELIMINAR CONTRATO" HorizontalAlignment="Left" Margin="555,387,0,0" VerticalAlignment="Top" Width="125"  BorderBrush="{x:Null}" Click="BtnEliminar_Click"/>
+        <Button x:Name="btnCancelar" Content="CANCELAR" HorizontalAlignment="Left" Margin="405,387,0,0" VerticalAlignment="Top" Width="75"  BorderBrush="{x:Null}" Click="BtnCancelar_Click"/>
+        <Label Content="Numero de contrato" HorizontalAlignment="Left" Margin="41,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="Razón social" HorizontalAlignment="Left" Margin="41,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rut" HorizontalAlignment="Left" Margin="476,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tipo de evento" HorizontalAlignment="Left" Margin="476,96,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="txtNroCont" Controls:TextBoxHelper.Watermark="Ingrese Numero de Contrato" HorizontalAlignment="Left" Height="23" Margin="171,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <TextBox x:Name="txtRazonSocial" Controls:TextBoxHelper.Watermark="Ingrese Razón Social" HorizontalAlignment="Left" Height="23" Margin="171,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
+        <TextBox x:Name="txtRut" Controls:TextBoxHelper.Watermark="Ingrese Estado" HorizontalAlignment="Left" Height="23" Margin="580,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+
+        <ComboBox x:Name="cmbTipoEvento" HorizontalAlignment="Left" Margin="581,97,0,0" VerticalAlignment="Top" Width="155"/>
+
+        <DataGrid x:Name="dgrContrato" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="168" Margin="95,207,0,0" VerticalAlignment="Top" Width="565" BorderBrush="#CC01000A">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Numero Contrato" Binding="{Binding NumeroContrato}"/>
+                <DataGridTextColumn Header="Rut Cliente" Binding="{Binding MiCliente.Rut}"/>
+                <DataGridTextColumn Header="Razón Social" Binding="{Binding MiCliente.RazonSocial}"/>
+                <DataGridTextColumn Header="Nombre Contacto" Binding="{Binding MiCliente.NombreContacto}"/>
+                <DataGridTextColumn Header="Tipo Evento" Binding="{Binding MiTipoEvento.Nombre}"/>
+                <DataGridTextColumn Header="Fecha Creación" Binding="{Binding Creacion}"/>
+                <DataGridTextColumn Header="Fecha Término" Binding="{Binding Termino}"/>
+                <DataGridTextColumn Header="Vigente" Binding="{Binding EstaVigente}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+    </Grid>
+</Controls:MetroWindow>

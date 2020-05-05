@@ -1,0 +1,78 @@
+﻿<Controls:MetroWindow x:Class="OnBreak.Presentacion.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:OnBreak.Presentacion"
+        mc:Ignorable="d"
+        Title="OnBreak - Inicio" Height="450" Width="800">
+    <Grid>
+        
+
+        <Controls:Tile x:Name="btnAdminCli" Title="Administración de clientes" 
+                  HorizontalAlignment="Left" 
+                  Margin="67,88,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="241" Height="125" 
+                  Background="#CC69D453" 
+                  HorizontalTitleAlignment="Right"
+                  RenderTransformOrigin="0.605,0.587" 
+                  
+                  FontStretch="UltraExpanded" Click="btnAdminCli_Click">
+            <iconPacks:Material  Width="40"
+                                              Height="40"
+                                              Kind="AccountMultiple" 
+                                      />
+
+
+
+
+        </Controls:Tile>
+        <Controls:Tile x:Name="btnListCli" Title="Listado de clientes" 
+            HorizontalAlignment="Left" 
+            Margin="313,88,0,0" 
+            VerticalAlignment="Top" 
+            Width="241" Height="125" 
+            Background="#CC69D453" 
+            HorizontalTitleAlignment="Left"
+            RenderTransformOrigin="0.605,0.587" 
+                  
+            FontStretch="UltraExpanded" Content="{iconPacks:Modern BookList, Height=40, Width=40}" Click="btnListCli_Click"/>
+        <Controls:Tile x:Name="btnAdminCont" Title="Administración de contratos" 
+            HorizontalAlignment="Left" 
+            Margin="67,260,0,0" 
+            VerticalAlignment="Top" 
+            Width="241" Height="125" 
+            Background="#CCA61515" 
+            HorizontalTitleAlignment="Right"
+            RenderTransformOrigin="0.605,0.587" 
+                  
+            FontStretch="UltraExpanded" Content="{iconPacks:Modern Kind=ClipboardPaperCheck, Height=40, Width=40}" Click="btnAdminCont_Click"/>
+
+
+
+        <Controls:Tile x:Name="btnListCont" Title="Listado de Contratos" 
+            HorizontalAlignment="Left" 
+            Margin="313,260,0,0" 
+            VerticalAlignment="Top" 
+            Width="241" Height="125" 
+            Background="#CCA61515" 
+            HorizontalTitleAlignment="Left"
+            RenderTransformOrigin="0.605,0.587" 
+                  
+            FontStretch="UltraExpanded" Content="{iconPacks:Unicons ClipboardAlt, Height=40, Width=40}" Click="btnListCont_Click"/>
+
+        <Button x:Name="btnConfig" HorizontalAlignment="Left" Margin="737,366,0,0" VerticalAlignment="Top" Width="43" Height="43"   Click="btnConfig_Click" Content="{iconPacks:Unicons Kind=Cog}"/>
+
+        <Image Margin="615,64,54.6,233" Source="Images/logo_transparent_background.png" Stretch="Fill" RenderTransformOrigin="0.084,0.907"/>
+        <Label Content="Clientes" HorizontalAlignment="Left" Margin="67,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.125,-0.047" Height="38" Width="173" FontSize="24" Foreground="White"/>
+        <Label Content="Contratos" HorizontalAlignment="Left" Margin="67,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.125,-0.047" Height="38" Width="173" FontSize="24" Foreground="White"/>
+        <Label Content="OnBreak (2020)&#xD;&#xA;Todos los derechos&#xD;&#xA; reservados" HorizontalAlignment="Left" Margin="587,192,0,0" VerticalAlignment="Top" Height="136" Width="174" FontSize="18"/>
+        <Controls:Flyout x:Name="flyConfig" Header="Configuracion del Sistema" HorizontalAlignment="Left" Position="Right" VerticalAlignment="Top" Margin="0,0,-8,0">
+            <Controls:ToggleSwitch x:Name="TswCambioDeTema" Header="Tema alto contraste" OffLabel="Desactivado" OnLabel="Activado" HorizontalAlignment="Left" Height="55" Margin="55,0,0,0" VerticalAlignment="Top" Width="170" Click="TswCambioDeTema_Click"/>
+        </Controls:Flyout>
+
+    </Grid>
+</Controls:MetroWindow>
